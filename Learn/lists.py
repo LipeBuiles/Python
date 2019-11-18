@@ -16,7 +16,7 @@ end = timer()
 time_out=end-start
 print("Time in seconds is {0}".format(time_out)) 
 
-#methods dir
+#Methods dir
 print(dir(colors))
 print(len(test))
 print(test[2])  
