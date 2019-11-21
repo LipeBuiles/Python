@@ -26,3 +26,4 @@ products = [
     {"name": "pc", "price": 1750000},
     {"name": "table", "price": 800000}
 ]
+print(products)
