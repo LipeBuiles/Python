@@ -1,3 +1,4 @@
+#El simbolo "=" se utiliza para asignar y "==" para comparar
 x = 40
 if x < 30:
     print("la edad x es menor que mi edad")
@@ -27,7 +28,7 @@ if name == "Juan Felipe":
     else:
         print("Mi nombre no es Juan Felipe Builes")
 else:
-    print("No eres Juam Felipe")
+    print("No eres Juan Felipe")
 
 x = 5
 if x > 2 and x <= 10:
