@@ -16,3 +16,12 @@ num3=int(input())
 
 from module import bigger_number
 print("El mayor de los tres números es {0}".format(bigger_number(num1,num2,num3)))
+
+#3. Build a program that asks for 3 numbers on the screen and then says phones is the largest, the middle one and the smallest of the entered numbers
+num1=int(input())
+num2=int(input())
+num3=int(input())
+
+from module import orden
+
+print("Los números organizados son: {0}".format(orden(num1,num2,num3)))

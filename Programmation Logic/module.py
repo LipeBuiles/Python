@@ -12,3 +12,10 @@ def bigger_number(num1, num2, num3):
         else:
             n=num3
             return n
+        
+def orden (num1, num2, num3):
+    a = min(num1, num2, num3)
+    b = max(num1, num2, num3)
+    c = (num1+num2+num3)-a-b
+    e = [a,b,c]
+    return e
