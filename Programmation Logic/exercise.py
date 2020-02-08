@@ -44,3 +44,16 @@ num=int(input())
 
 from module import year_leap
 print(year_leap(num))
+
+#6. Develop a program that enters the name of an employee, his basic hourly wage and the number of hours worked in the month; Write your name and monthly salary if it is higher than the minimum wage, otherwise write only the name.
+print("Ingrese nombre: ")
+name=input()
+print("Ingrese número de horas trabajadas: ")
+h=int(input())
+print("Ingrese valor hora: ")
+valorh=int(input())
+print("Ingrese valor salario mínimo mensual: ")
+mini=int(input())
+
+from module import payroll
+print(payroll(name,h,valorh,mini))

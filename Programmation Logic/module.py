@@ -31,3 +31,11 @@ def year_leap(num):
             return "El año: {0}, si es biciesto".format(num)
         else:
             return "El año: {0}, no es biciesto".format(num)
+        
+def payroll(name,h,valorh,mini):
+    valor=valorh*h  
+    if valor>mini:
+        return "Nombre: {0}\nSalario Mensual: {1}".format(name,valor)
+    else:
+        return "Nombre: {0}".format(name)
+        
