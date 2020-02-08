@@ -22,3 +22,12 @@ def order (num1,num2,num3):
 
 def multiple(num1,num2):
     return num1%num2
+
+def year_leap(num):
+    if (num%4==0 and num%100!=0) or (num%400==0):
+        return "El año: {0}, si es biciesto".format(num)
+    else:
+        if (num%4==0) and (num%100!=num or num%400):
+            return "El año: {0}, si es biciesto".format(num)
+        else:
+            return "El año: {0}, no es biciesto".format(num)

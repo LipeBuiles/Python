@@ -37,3 +37,10 @@ if multiple(num1,num2) == 0:
     print("El número: {1}, es múltiplo de: {0}".format(num1,num2))
 else:
     print("El número: {1}, no es múltiplo de: {0}".format(num1,num2))
+
+#5. Build a program that asks for a year and then determine if the year is leap or not.
+print("Ingrese el año: ")
+num=int(input())
+
+from module import year_leap
+print(year_leap(num))
