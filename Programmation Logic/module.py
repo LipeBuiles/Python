@@ -38,4 +38,17 @@ def payroll(name,h,valorh,mini):
         return "Nombre: {0}\nSalario Mensual: {1}".format(name,valor)
     else:
         return "Nombre: {0}".format(name)
-        
+
+def discount(units):
+    valor_compra=650000*units
+    if units<5:
+        valor_total=valor_compra-(valor_compra*0.1)
+        return "El valor a pagar es: {0}".format(valor_total)
+    else:
+        if units>=5 and units<10:
+            valor_total=valor_compra-(valor_compra*0.2)
+            return "El valor a pagar es: {0}".format(valor_total)
+        else:
+            if units>=10:
+                valor_total=valor_compra-(valor_compra*.4)
+                return "El valor a pagar es: {0}".format(valor_total)

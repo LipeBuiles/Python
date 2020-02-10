@@ -57,3 +57,11 @@ mini=int(input())
 
 from module import payroll
 print(payroll(name,h,valorh,mini))
+
+#7. A desktop store makes the following discounts: if the customer purchases less than 5 units, a 10% discount on the purchase is granted; if the number of units is greater than or equal to five but less than 10, 20% and, if there are 10 or more, it is given 40%.
+
+print("Número de escritorios: ")
+units=int(input())
+
+from module import discount
+print(discount(units))
