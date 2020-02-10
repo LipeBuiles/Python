@@ -1,3 +1,4 @@
+#region exercise 1 
 #1. Build a program that asks for a number and then says if this number is even or not?
 print("Ingrese un número:")
 num=int(input())
@@ -7,7 +8,8 @@ if module.modulo(num) == 0:
     print("El número {0} es par".format(num))
 else:
     print("El número {0} es impar".format(num))
-
+#endregion
+#region exercise 2
 #2. Build a program that asks for 3 numbers on the screen and then say which is the largest of the numbers entered?
 print("Ingrese tres numeros:")
 num1=int(input())
@@ -16,7 +18,8 @@ num3=int(input())
 
 from module import bigger_number
 print("El mayor de los tres números es {0}".format(bigger_number(num1,num2,num3)))
-
+#endregion
+#region exercise 3
 #3. Build a program that asks for 3 numbers on the screen and then says phones is the largest, the middle one and the smallest of the entered numbers
 print("Ingrese tres numeros:")
 num1=int(input())
@@ -25,7 +28,8 @@ num3=int(input())
 
 from module import order
 print("{0}".format(order(num1,num2,num3)))
-
+#endregion
+#region exercise 4
 #4. Build a program that asks for two numbers and says if the second is a multiple of the first.
 print("Ingrese el primer número: ")
 num1=int(input())
@@ -37,14 +41,16 @@ if multiple(num1,num2) == 0:
     print("El número: {1}, es múltiplo de: {0}".format(num1,num2))
 else:
     print("El número: {1}, no es múltiplo de: {0}".format(num1,num2))
-
+#endregion
+#region exercise 5
 #5. Build a program that asks for a year and then determine if the year is leap or not.
 print("Ingrese el año: ")
 num=int(input())
 
 from module import year_leap
 print(year_leap(num))
-
+#endregion
+#region exercise 6
 #6. Develop a program that enters the name of an employee, his basic hourly wage and the number of hours worked in the month; Write your name and monthly salary if it is higher than the minimum wage, otherwise write only the name.
 print("Ingrese nombre: ")
 name=input()
@@ -57,7 +63,8 @@ mini=int(input())
 
 from module import payroll
 print(payroll(name,h,valorh,mini))
-
+#endregion
+#region exercise 7
 #7. A desktop store makes the following discounts: if the customer purchases less than 5 units, a 10% discount on the purchase is granted; if the number of units is greater than or equal to five but less than 10, 20% and, if there are 10 or more, it is given 40%.
 
 print("Número de escritorios: ")
@@ -65,3 +72,4 @@ units=int(input())
 
 from module import discount
 print(discount(units))
+#endregion
