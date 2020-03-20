@@ -52,3 +52,27 @@ def discount(units):
             if units>=10:
                 valor_total=valor_compra-(valor_compra*.4)
                 return "El valor a pagar es: {0}".format(valor_total)
+
+def value_credit(credit, value, stratum):
+    if stratum==1:
+        percentage=0.8
+    else:
+        if stratum==2:
+            percentage=0.5
+        else:
+            if stratum==3:
+                percentage=0.3
+            else:
+                percentage=0.0
+
+    if credit<20:
+        return (credit*value)*percentage
+    else:
+        return ((value*20)+((credit-20)*value*2))*percentage
+
+def subsidy(stratum):
+    if stratum==1:
+        return 200000
+    else:
+        if stratum==2:
+            return 100000
