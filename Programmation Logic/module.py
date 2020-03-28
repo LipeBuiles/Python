@@ -76,3 +76,60 @@ def subsidy(stratum):
     else:
         if stratum==2:
             return 100000
+
+def tariff(payment_type, monday, merchandise_value, weigh):
+    import math
+    if weigh<100:
+        shipping_fee=20000
+        return shipping_fee
+    else:
+        if weigh>=100 and weigh<=150:
+            shipping_fee=25000
+            return shipping_fee
+        else:
+            if weigh>=150 and weigh<=200:
+                shipping_fee=30000
+                return shipping_fee
+            else:
+                shipping_fee=35000+(math.floor(((weigh-200)/10))*2000)
+                return shipping_fee
+
+def promotion(payment_type, monday, merchandise_value, weigh):
+    shipping_fee=tariff(payment_type, monday, merchandise_value, weigh)
+    if(monday=='S' or monday=='s') and (payment_type=='T' or payment_type=='t'):
+        shipping_fee=shipping_fee*0.50
+        return int(shipping_fee)
+    else:
+        if (payment_type=='E' or payment_type=='e') and shipping_fee>1000000:
+            shipping_fee=shipping_fee*0.60
+            return int(shipping_fee)
+        else:
+            shipping_fee=0
+            return int(shipping_fee)
+
+def discounts(payment_type, monday, merchandise_value, weigh):
+    shipping_fee=promotion(payment_type, monday, merchandise_value, weigh)
+    tariff1=tariff(payment_type, monday, merchandise_value, weigh)
+    if shipping_fee==0.00:
+        if merchandise_value>=300000 and merchandise_value<=600000:
+            shipping_fee=tariff1*0.1
+            return int(shipping_fee)
+        else:
+            if merchandise_value>=600000 and merchandise_value<=1000000:
+                shipping_fee=tariff1*0.2
+                return int(shipping_fee)
+            else:
+                if merchandise_value>1000000:
+                    shipping_fee=tariff1*0.3
+                    return int(shipping_fee)
+                                
+    else:
+        shipping_fee=0
+        return int(shipping_fee)
+
+def total(payment_type, monday, merchandise_value, weigh):
+    a=int(tariff(payment_type, monday, merchandise_value, weigh))
+    b=int(promotion(payment_type, monday, merchandise_value, weigh))
+    c=int(discounts(payment_type, monday, merchandise_value, weigh))
+    d=a-b-c
+    return print("Total a pagar: {0}".format(d))
