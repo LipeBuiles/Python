@@ -157,6 +157,87 @@ def switch():
         total(payment_type, monday, merchandise_value, weigh)
         #endregion
     
+    elif nGeneral == 10:
+        #region exercise 10
+        # Almacenes SUCESO S.A. you want to know the sale value of a VR_V product, from the following information that
+        # owns of this:
+        # CC purchase cost
+        # Type of product TP (Perishable or Non-perishable).
+        # Type of conservation TC (cold or ambient)
+        # Conservation Period in days. personal computer
+        # Storage period in PA days
+        # Volume in liters VOL
+        # MA storage medium (Refrigerator, freezer, shelf and crate)
+        # The sale value VR_V is equal to:
+        # 20% more of the value of the VR_P product, when the type of TP product corresponds to a non-perishable item, or The
+        # 40% more than the value of the VR_P product, when the TP product type corresponds to a perishable item.
+        # The value of the product VR_P, the sum of the CC purchase cost, CA storage cost and cost of
+        # EC display, multiplied by the depreciation percentage of the PDP product.
+        # The costs and the depreciation percentage must be calculated in subprograms like this:
+        # Storage Cost Function. In this, the cost of CA storage must be calculated to be returned to the
+        # main program.
+        # The cost of CA storage differs for perishable and non-perishable items.
+        # • For perishable products:
+        # Cost of storage AC is equal to 5% of the cost of purchase DC when it is a product of type of
+        # TC conservation in cold and with a PC conservation period of less than 10 days.
+        # Cost of storage CA is equal to 10% of the cost of purchase CC when it is a product of type of
+        # TC conservation in cold and with a PC conservation period greater than or equal to 10 days.
+        # Cost of storage AC is equal to 3% of the cost of purchase DC when it is a product of type of
+        # Conservation TC in the environment and with a storage period PA of less than 20.
+        # Cost of storage CA is equal to 10% of the cost of purchase CC when it is a product of type of
+        # TC conservation in the environment and with a PA storage period of more than 20 days.
+        # Cost of storage AC is equal to 5% of the cost of purchase DC when it is a product of type of
+        # TC conservation in room and with a storage period PA exactly 20.
+        # 8
+        # • For non-perishable products
+        # The cost of storage CA is calculated through its volume in liters VOL as follows:
+        # Storage cost CA is equal to 10% of the purchase cost CC when the volume VOL is greater than or equal to the
+        # 50 liters,
+        # Storage cost CA is equal to 20% of the purchase cost CC when the volume VOL is less than 50
+        # liters.
+        # Product Depreciation Percentage Function. In this you must calculate the percentage of depreciation of the product
+        # PDP, to be returned to the main program.
+        # The depreciation percentage of the PDP product is equal to 0.95 when the storage period PA is less than
+        # 30 days, or
+        # The depreciation percentage of the PDP product is equal to 0.85 when the storage period PA is greater than or
+        # equal to 30 days
+        # E Cost function: The CE display cost also differs between perishable and non-perishable items,
+        # calculated like this:
+        # • For perishable products:
+        # Those perishable items whose conservation type TC is cold, and the storage medium MA is refrigerator, the
+        # CE display cost is twice the CA storage cost.
+        # Those perishable items whose conservation type TC is cold, and the storage medium MA is
+        # freezer, CE display cost corresponds to CA storage cost.
+        # • For non-perishable products:
+        # The CE display cost corresponds to 5% of the CA storage cost, for products whose medium of
+        # MA storage is on shelf
+        # The CE display cost corresponds to 7% of the CA storage cost, for products whose medium of
+        # MA storage is in guacal
+        print("Costo de compra ($)....................................................:", end=" ")
+        CC=int(input())
+        print("Tipo de producto [P]erecedero, [N]o perecedero.........................:", end=" ")
+        TP=input()
+        print("Tipo de conservación [F]rio, [A]mbiente................................:", end=" ")
+        TC=input()
+        print("Periodo de conservación (días).........................................:", end=" ")
+        PC=int(input())
+        print("Periodo de almacenamiento (días).......................................:", end=" ")
+        PA=int(input())
+        print("Volumen (litros).......................................................:", end=" ")
+        VOL=int(input())
+        print("Medio de almacenamiento [N]evera, [C]ongelador, [E]estanteria, [G]uacal:", end=" ")
+        MA=input()
+        from module import almacenes_suceso
+        result = almacenes_suceso(CC, TP, TC, PC, PA, VOL, MA)
+
+        print("\n")
+        print("Costos de almacenamiento..............................................: {0}".format(result[0]))
+        print("Porcentaja de depreciación............................................: {0}".format(result[1]))
+        print("Costo de exhibición...................................................: {0}".format(result[2]))
+        print("Valor producto........................................................: {0}".format(result[3]))
+        print("Valor venta...........................................................: {0}".format(result[4]))
+        #endregion
+
     elif nGeneral == 0:
         print("Ingrese una opción correcta entre el ejercicio 1 al 37")
         sys.exit()

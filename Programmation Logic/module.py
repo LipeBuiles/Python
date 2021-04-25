@@ -133,3 +133,48 @@ def total(payment_type, monday, merchandise_value, weigh):
     c=int(discounts(payment_type, monday, merchandise_value, weigh))
     d=a-b-c
     return print("Total a pagar: {0}".format(d))
+
+def almacenes_suceso(CC, TP, TC, PC, PA, VOL, MA):
+    if PA<30:
+        PDP=0.95
+    if PA>=30:
+        PDP=0.85
+
+    if TP=='P' or TP=='p':
+        if (TC=='F' or TC=='f') and (PC<10):
+            CA=CC*0.05
+        if (TC=='F' or TC=='f') and (PC>=10):
+            CA=CC*0.10
+        if (TC=='A' or TC=='a') and (PC<20):
+            CA=CC*0.03
+        if (TC=='A' or TC=='a') and (PC>20):
+            CA=CC*0.10
+        if (TC=='A'or TC=='a') and (PC==20):
+            CA=CC*0.05
+
+    if TP=='N' or TP=='n':
+        if VOL>=50:
+            CA=CC*0.10
+        if VOL<50:
+            CA=CC*0.20
+
+    if TP=='P' or TP=='p':
+        if (TC=='F' or TC=='f') and (MA=='N' or MA=='n'):
+            CE=CA*2
+        if (TC=='F' or TC=='f') and (MA=='C' or MA=='c'):
+            CE=CA
+
+    if TP=='N' or TP=='n':
+        if MA=='E' or MA=='e':
+            CE=CA*0.05
+        if MA=='G' or MA=='g':
+            CE=CA*0.07
+    
+    VR_P=(CC+CA+CE)*PDP
+
+    if TP=='P' or TP=='p':
+        VR_V=VR_P+VR_P*0.40
+    if TP=='N' or TP=='n':
+        VR_V=VR_P+VR_P*0.20
+
+    return CA, PDP, CE, VR_P, VR_V
