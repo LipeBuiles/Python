@@ -245,6 +245,20 @@ def switch():
         # print("Valor venta...........................................................: {0}".format(result[4]))
         # #endregion
 
+    elif nGeneral == 12:
+        #region exercise 12
+        #7. Build a program that prints the top N, their sum and their average.
+
+        print("Cuantos números desea:", end=" ")
+        number=int(input())
+
+        from module import serie
+        datos = serie(number)
+        print(datos[0])
+        print("La suma es: {0}".format(datos[1]))
+        print("El promedio es: {0}".format(datos[2]))
+
+        #endregion
 
     elif nGeneral == 0:
         print("Ingrese una opción correcta entre el ejercicio 1 al 37")
@@ -252,7 +266,6 @@ def switch():
     
     elif nGeneral != range(1,37):
         print("Ingrese una opción correcta entre el ejercicio 1 al 37 ó el número cero para terminar!!!")
-
 
 import sys
 

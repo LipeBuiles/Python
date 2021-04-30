@@ -525,3 +525,11 @@ def subsidio_gasolina(peso, ruta, num_pasajero, peso_total, precio_galon):
             subsidios=aux+aux*0.25
 
         return subsidios
+
+def serie(number):
+    lista = list(range(1,number+1))
+    total = 0
+    for i in range(1,number+1):
+        total = i+total
+    promedio = total/number
+    return lista, total, promedio
