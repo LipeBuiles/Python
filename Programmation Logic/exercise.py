@@ -87,6 +87,7 @@ def switch():
         from module import discount
         print(discount(units))
         #endregion
+   
     elif nGeneral == 8:
         #region exercise 8
         #8. You want to obtain the value of the enrollment of a student whose value is calculated as follows in a subprogram:
@@ -159,60 +160,7 @@ def switch():
     
     elif nGeneral == 10:
         #region exercise 10
-        # Almacenes SUCESO S.A. you want to know the sale value of a VR_V product, from the following information that
-        # owns of this:
-        # CC purchase cost
-        # Type of product TP (Perishable or Non-perishable).
-        # Type of conservation TC (cold or ambient)
-        # Conservation Period in days. personal computer
-        # Storage period in PA days
-        # Volume in liters VOL
-        # MA storage medium (Refrigerator, freezer, shelf and crate)
-        # The sale value VR_V is equal to:
-        # 20% more of the value of the VR_P product, when the type of TP product corresponds to a non-perishable item, or The
-        # 40% more than the value of the VR_P product, when the TP product type corresponds to a perishable item.
-        # The value of the product VR_P, the sum of the CC purchase cost, CA storage cost and cost of
-        # EC display, multiplied by the depreciation percentage of the PDP product.
-        # The costs and the depreciation percentage must be calculated in subprograms like this:
-        # Storage Cost Function. In this, the cost of CA storage must be calculated to be returned to the
-        # main program.
-        # The cost of CA storage differs for perishable and non-perishable items.
-        # • For perishable products:
-        # Cost of storage AC is equal to 5% of the cost of purchase DC when it is a product of type of
-        # TC conservation in cold and with a PC conservation period of less than 10 days.
-        # Cost of storage CA is equal to 10% of the cost of purchase CC when it is a product of type of
-        # TC conservation in cold and with a PC conservation period greater than or equal to 10 days.
-        # Cost of storage AC is equal to 3% of the cost of purchase DC when it is a product of type of
-        # Conservation TC in the environment and with a storage period PA of less than 20.
-        # Cost of storage CA is equal to 10% of the cost of purchase CC when it is a product of type of
-        # TC conservation in the environment and with a PA storage period of more than 20 days.
-        # Cost of storage AC is equal to 5% of the cost of purchase DC when it is a product of type of
-        # TC conservation in room and with a storage period PA exactly 20.
-        # 8
-        # • For non-perishable products
-        # The cost of storage CA is calculated through its volume in liters VOL as follows:
-        # Storage cost CA is equal to 10% of the purchase cost CC when the volume VOL is greater than or equal to the
-        # 50 liters,
-        # Storage cost CA is equal to 20% of the purchase cost CC when the volume VOL is less than 50
-        # liters.
-        # Product Depreciation Percentage Function. In this you must calculate the percentage of depreciation of the product
-        # PDP, to be returned to the main program.
-        # The depreciation percentage of the PDP product is equal to 0.95 when the storage period PA is less than
-        # 30 days, or
-        # The depreciation percentage of the PDP product is equal to 0.85 when the storage period PA is greater than or
-        # equal to 30 days
-        # E Cost function: The CE display cost also differs between perishable and non-perishable items,
-        # calculated like this:
-        # • For perishable products:
-        # Those perishable items whose conservation type TC is cold, and the storage medium MA is refrigerator, the
-        # CE display cost is twice the CA storage cost.
-        # Those perishable items whose conservation type TC is cold, and the storage medium MA is
-        # freezer, CE display cost corresponds to CA storage cost.
-        # • For non-perishable products:
-        # The CE display cost corresponds to 5% of the CA storage cost, for products whose medium of
-        # MA storage is on shelf
-        # The CE display cost corresponds to 7% of the CA storage cost, for products whose medium of
-        # MA storage is in guacal
+        #View pdf
         print("Costo de compra ($)....................................................:", end=" ")
         CC=int(input())
         print("Tipo de producto [P]erecedero, [N]o perecedero.........................:", end=" ")
@@ -237,6 +185,66 @@ def switch():
         print("Valor producto........................................................: {0}".format(result[3]))
         print("Valor venta...........................................................: {0}".format(result[4]))
         #endregion
+
+    elif nGeneral == 11:
+        #region exercise 11
+        #view pdf
+        print("Ruta [1][2][3][4]...............................:", end=" ")
+        ruta=int(input())
+        print("Número de viajes................................:", end=" ")
+        num_viajes=int(input())
+        print("Número de pasajeros total.......................:", end=" ")
+        num_pasajero=int(input())
+        print("Número de encomiendas de menos de 10Kg..........:", end=" ")
+        menos_10=int(input())
+        print("Número de encomiendas entre 10Kg y menos de 20Kg:", end=" ")
+        entre_10_20=int(input())
+        print("Número de encomiendas de más de 20Kg............:", end=" ")
+        mas_20=int(input())
+
+        peso_menos_10 = menos_10*10
+        peso_entre_10_20 = entre_10_20*15
+        peso_mas_20 = mas_20*20
+        peso = menos_10*10 + entre_10_20*15+ mas_20*20
+
+
+        peso_total=peso+num_pasajero*60
+        precio_galon=8860/39
+
+        from module import comision_pasajero
+        from module import servicio_encomiedades
+        from module import gastos_ayudante_seguro
+        from module import subsidio_gasolina
+
+        comision1 = (comision_pasajero(num_pasajero, ruta, num_viajes))
+        print("Ingresos por Pasajeros.........................: {0}".format(comision1))
+
+        comision2 = (servicio_encomiedades(ruta, menos_10, entre_10_20, mas_20, peso, peso_menos_10, peso_entre_10_20, peso_mas_20))
+        print("Ingresos por Encomiendas.......................: {0}".format(comision2))
+
+        comision_total=comision1+comision2
+        print("TOTAL INGRESOS.................................: {0}".format(comision_total))
+
+        seguro_ayudante = gastos_ayudante_seguro(comision_total)
+        print("Pago Ayudante..................................: {0}".format(seguro_ayudante[0]))
+        print(seguro_ayudante[1])
+
+        total_subsidio = subsidio_gasolina(peso, ruta, num_pasajero, peso_total, precio_galon)
+        print("Pago Combustible...............................: {0}".format(total_subsidio))
+
+        total_deducciones = seguro_ayudante[0] + seguro_ayudante[1] + total_subsidio
+        print("TOTAL DEDUCCIONES..............................: {0}".format(total_deducciones))
+
+        print("TOTAL A LIQUIDAR...............................: {0}".format(comision_total-total_deducciones))
+        
+        # print("\n")
+        # print("Costos de almacenamiento..............................................: {0}".format(result[0]))
+        # print("Porcentaja de depreciación............................................: {0}".format(result[1]))
+        # print("Costo de exhibición...................................................: {0}".format(result[2]))
+        # print("Valor producto........................................................: {0}".format(result[3]))
+        # print("Valor venta...........................................................: {0}".format(result[4]))
+        # #endregion
+
 
     elif nGeneral == 0:
         print("Ingrese una opción correcta entre el ejercicio 1 al 37")
