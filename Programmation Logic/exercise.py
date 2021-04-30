@@ -259,6 +259,19 @@ def switch():
         print("El promedio es: {0}".format(datos[2]))
 
         #endregion
+   
+    elif nGeneral == 13:
+        #region exercise 12
+        #7. Build a program that prints the top N, their sum and their average.
+
+        print("Cuantos números desea:", end=" ")
+        number=int(input())
+
+        from module import sumatoria
+        datos = sumatoria(number)
+        print("El factorial es: {0}".format(datos))
+
+        #endregion
 
     elif nGeneral == 0:
         print("Ingrese una opción correcta entre el ejercicio 1 al 37")

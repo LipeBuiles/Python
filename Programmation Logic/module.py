@@ -533,3 +533,11 @@ def serie(number):
         total = i+total
     promedio = total/number
     return lista, total, promedio
+
+def sumatoria(number):
+    lista = list(range(1,number+1))
+    total = 1
+    for i in range(1,number+1):
+        total = i*total
+    return total
+    
