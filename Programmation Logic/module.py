@@ -549,3 +549,14 @@ def taylor(number, x):
         total = total+(pow(x, i)/fac)
     
     return total
+
+def taylor_mod(number, x):
+    total = 1
+    fac = 1
+    for i in range(1,number+1):
+        fac = fac*i
+        if i%2 != 0:
+            total = total-(pow(x, i)/fac)
+        else:
+            total = total+(pow(x, i)/fac)
+    return total

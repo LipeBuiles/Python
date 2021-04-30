@@ -253,7 +253,7 @@ def switch():
         #endregion
    
     elif nGeneral == 13:
-        #region exercise 12
+        #region exercise 13
         #7. Build a program that prints the top N, their sum and their average.
 
         print("Cuantos números desea:", end=" ")
@@ -265,8 +265,8 @@ def switch():
         #endregion
 
     elif nGeneral == 14:
-        #region exercise 12
-        #7. Build a program that prints the top N, their sum and their average.
+        #region exercise 14
+        #7. Construct a program that calculates the first n terms of the Taylor series.
 
         print("Cuantos términos desea:", end=" ")
         number=int(input())
@@ -276,7 +276,22 @@ def switch():
 
         from module import taylor
         datos = taylor(number, x)
-        print("El factorial es: {0}".format(datos))
+        print("f(x): {0}".format(datos))
+        #endregion
+
+    elif nGeneral == 15:
+        #region exercise 15
+        #7. Build a program that calculates the first n terms of the series.
+
+        print("Cuantos términos desea:", end=" ")
+        number=int(input())
+
+        print("Digita el valor de x:", end=" ")
+        x=int(input())
+
+        from module import taylor_mod
+        datos = taylor_mod(number, x)
+        print("f(x): {0}".format(datos))
         #endregion
 
     elif nGeneral == 0:
