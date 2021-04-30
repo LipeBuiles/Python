@@ -236,14 +236,7 @@ def switch():
         print("TOTAL DEDUCCIONES..............................: {0}".format(total_deducciones))
 
         print("TOTAL A LIQUIDAR...............................: {0}".format(comision_total-total_deducciones))
-        
-        # print("\n")
-        # print("Costos de almacenamiento..............................................: {0}".format(result[0]))
-        # print("Porcentaja de depreciación............................................: {0}".format(result[1]))
-        # print("Costo de exhibición...................................................: {0}".format(result[2]))
-        # print("Valor producto........................................................: {0}".format(result[3]))
-        # print("Valor venta...........................................................: {0}".format(result[4]))
-        # #endregion
+        #endregion
 
     elif nGeneral == 12:
         #region exercise 12
@@ -257,7 +250,6 @@ def switch():
         print(datos[0])
         print("La suma es: {0}".format(datos[1]))
         print("El promedio es: {0}".format(datos[2]))
-
         #endregion
    
     elif nGeneral == 13:
@@ -270,7 +262,21 @@ def switch():
         from module import sumatoria
         datos = sumatoria(number)
         print("El factorial es: {0}".format(datos))
+        #endregion
 
+    elif nGeneral == 14:
+        #region exercise 12
+        #7. Build a program that prints the top N, their sum and their average.
+
+        print("Cuantos términos desea:", end=" ")
+        number=int(input())
+
+        print("Digita el valor de x:", end=" ")
+        x=int(input())
+
+        from module import taylor
+        datos = taylor(number, x)
+        print("El factorial es: {0}".format(datos))
         #endregion
 
     elif nGeneral == 0:

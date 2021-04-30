@@ -540,4 +540,12 @@ def sumatoria(number):
     for i in range(1,number+1):
         total = i*total
     return total
+
+def taylor(number, x):
+    total = 1
+    fac = 1
+    for i in range(1,number+1):
+        fac = fac*i
+        total = total+(pow(x, i)/fac)
     
+    return total
