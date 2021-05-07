@@ -55,3 +55,32 @@ def Largest_Prime_Factor(n):
     return prime_factor
 
 print(Largest_Prime_Factor(600851475143 ))
+
+#A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+#Find the largest palindrome made from the product of two 3-digit numbers.
+
+num_one = 999
+num_two = 999
+palindromic = []
+
+for i in range(100, num_one+1):
+    for j in range(100, num_two+1):
+        num = i*j
+        if num>=100000:
+            c = num%10
+            d = (num%100)/10
+            d = int(d)
+            e = (num%1000)/100
+            e = int(e)
+            f = (num%10000)/1000
+            f = int(f)
+            g = (num%100000)/10000
+            g = int(g)
+            h = (num%1000000)/100000
+            h = int(h)
+
+            if (h-c==0 or c-h==0) and (g-d==0 or d-g==0) and (f-e==0 or e-f==0):
+                final = num
+                palindromic.append(final)
+
+print(max(palindromic))
