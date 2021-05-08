@@ -84,3 +84,39 @@ for i in range(100, num_one+1):
                 palindromic.append(final)
 
 print(max(palindromic))
+
+
+#2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+#What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+def prime(n):
+    while n>0:
+        validation = []
+        for j in range(1,12):
+            if n%j==0:
+                validation.append(j)
+                large = len(validation)
+            else:
+                break
+
+        if large==11:
+            break
+        n=n+1
+    return print(n)
+
+prime(2520)
+
+#The sum of the squares of the first ten natural numbers is, 385
+#The square of the sum of the first ten natural numbers is, 3025
+#Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is .
+#Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+num = 100
+
+sum_cua = (num*(num+1)*(2*num+1))/6
+sum_nan = (1+num)*(num/2)
+sum_nan = sum_nan*sum_nan
+total=sum_nan-sum_cua
+print(sum_cua)
+print(sum_nan)
+print(total)
