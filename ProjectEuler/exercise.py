@@ -54,7 +54,7 @@ def Largest_Prime_Factor(n):
 
     return prime_factor
 
-print(Largest_Prime_Factor(600851475143 ))
+print(Largest_Prime_Factor(600851475143))
 
 #A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 #Find the largest palindrome made from the product of two 3-digit numbers.
@@ -120,3 +120,24 @@ total=sum_nan-sum_cua
 print(sum_cua)
 print(sum_nan)
 print(total)
+
+#By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+#What is the 10 001st prime number?
+
+i = 9
+ultimo = [2, 3, 5, 7]
+while i>0:
+    i += 1
+    primos = range(2, i-1)
+    lista = []
+    for j in primos:
+        result = i%j
+        if result==0:
+            lista.append(j)
+    if len(lista)==0:
+        ultimo.append(i)
+
+    if len(ultimo)==10001:
+        break
+
+print(ultimo.pop())
