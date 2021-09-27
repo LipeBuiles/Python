@@ -42,3 +42,20 @@ print(colors)
 colors.sort(reverse=True)
 print(colors)
 print(colors.index("green"))
+
+#todo lkdldkld
+
+import tensorflow as tf
+import numpy as np
+import pandas as pd
+colors = np.array
+en
+
+
+if x=1:
+    print("x is 1
+
+
+import tensorflow as tf
+tensorflow.version.VERSION
+tensorflow.TabError()

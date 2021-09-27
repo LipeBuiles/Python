@@ -1,0 +1,23 @@
+*** Instalación django ***
+pip install django
+
+
+*** Revisar la versión django ***
+python -m django --version
+
+
+*** Crear el mysite ***
+django-admin startproject mysite
+
+
+*** Ejecutar el servidor ***
+python manage.py runserver
+
+
+*** Crear la primera aplicación ***
+python manage.py startapp mysite
+
+
+*** Modificar la vista ***
+en el archivo viwes.py se crea la vista y en mysite se debe en enlazar la ruta de la vista
+path('inicio', include('mipagina.urls')), en caso de estar vacio redirige directamente a la vista
