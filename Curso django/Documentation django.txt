@@ -21,3 +21,10 @@ python manage.py startapp mysite
 *** Modificar la vista ***
 en el archivo viwes.py se crea la vista y en mysite se debe en enlazar la ruta de la vista
 path('inicio', include('mipagina.urls')), en caso de estar vacio redirige directamente a la vista
+
+
+*** Lista basadas en funciones ***
+Una función o clase recibe una petición y devuelve una respuesta en las urls.
+La vista contiene toda la logical y las view se encuentran en view.py
+
+Tipos basadas en en clases y en shorcodes
