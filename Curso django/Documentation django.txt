@@ -38,3 +38,30 @@ Tipos basadas en en clases y en shorcodes
 
 Inlcuir en el archivo settings.py la ruta del folder templates
 ej: 'DIRS': [r"C:\projects\Python\Curso django\mysite\mipagina\templates"],
+
+*** Crear las migraciones ***
+
+Añadir en settings.py la ruta del folder migrations
+
+ej:
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'mipagina'
+]
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+*** Crear datos en la tabla personas del modelo mipagina ***
+
+pyton manage.py shell
+
+persona1 = Personas(nombre = "Juan", direccion = "cra 58 77 50", email = "elpinchepastel@gmail.com", telefono = "3158901349")
+
+persona1.save
