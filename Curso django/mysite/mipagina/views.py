@@ -37,3 +37,6 @@ def bienvenida(request):
 
 def barras(request):
     return render(request, "vista2.html")
+
+def video_youtube(request):
+    return render(request, "video.html")
