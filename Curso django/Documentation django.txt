@@ -28,3 +28,13 @@ Una función o clase recibe una petición y devuelve una respuesta en las urls.
 La vista contiene toda la logical y las view se encuentran en view.py
 
 Tipos basadas en en clases y en shorcodes
+
+
+1. Crear la view
+2. Crear un folder template
+3. Crear el html con que recibe las variables de la views
+4. En urls.py de la aplicación se enlaza la ruta con la vista
+5. Validar que la urls.py contenga el path de la aplicación
+
+Inlcuir en el archivo settings.py la ruta del folder templates
+ej: 'DIRS': [r"C:\projects\Python\Curso django\mysite\mipagina\templates"],
