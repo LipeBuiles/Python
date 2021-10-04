@@ -65,3 +65,5 @@ pyton manage.py shell
 persona1 = Personas(nombre = "Juan", direccion = "cra 58 77 50", email = "elpinchepastel@gmail.com", telefono = "3158901349")
 
 persona1.save
+
+persona1.email = "elpinchepastel1@gmail.com"

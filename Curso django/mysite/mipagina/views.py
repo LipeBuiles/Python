@@ -3,6 +3,7 @@ from datetime import datetime
 from django.template import Template, Context
 from django.views import View
 from django.shortcuts import render
+from mipagina.models import Personas
 
 
 def index(request):
@@ -40,3 +41,19 @@ def barras(request):
 
 def video_youtube(request):
     return render(request, "video.html")
+
+def busqueda(request):
+    return render(request, "busqueda.html")
+
+def resultado(request):
+    if request.GET["prd"]:
+        persona = request.GET["prd"]
+        if len(persona)>20:
+            mensaje = "Texto de busqueda demasiado largo"
+        else:
+            estudiantes = Personas.objects.filter(nombre = persona)
+            return render(request, "resultado.html", {"estudiantes": estudiantes,  "query": persona})
+    else:
+        
+        mensaje = "No has introducido  nada"
+    return HttpResponse(mensaje)

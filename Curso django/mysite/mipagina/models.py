@@ -7,4 +7,3 @@ class Personas(models.Model):
     direccion = models.CharField(max_length=50, verbose_name="La direccion")
     email = models.EmailField(blank=True, null=True)
     telefono = models.CharField(max_length=11)
-
