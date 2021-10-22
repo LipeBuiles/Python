@@ -60,10 +60,8 @@ python manage.py migrate
 
 *** Crear datos en la tabla personas del modelo mipagina ***
 
-pyton manage.py shell
+python manage.py shell
 
-persona1 = Personas(nombre = "Juan", direccion = "cra 58 77 50", email = "elpinchepastel@gmail.com", telefono = "3158901349")
-
+from mipagina.models import Personas
+persona1 = Personas(nombre = "Felipe", direccion = "cra 58 77 50", email = "elpinchepastel@gmail.com", telefono = "3158901349")
 persona1.save
-
-persona1.email = "elpinchepastel1@gmail.com"

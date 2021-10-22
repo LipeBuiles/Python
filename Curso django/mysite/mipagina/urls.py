@@ -10,5 +10,7 @@ urlpatterns = [
     path('barras/', views.barras, name='barras'),
     path('video/', views.video_youtube, name='video'),
     path('busqueda/', views.busqueda, name='busqueda'),
-    path('resultado/', views.resultado, name='resultado')
+    path('resultado/', views.resultado, name='resultado'),
+    path('registro/', views.RegistroUsuario.as_view(), name="sing up"),
+    path('saludo/', views.GreetingView.as_view(), name="saludo")
 ]

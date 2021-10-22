@@ -1,14 +1,19 @@
+from django.views.generic.edit import UpdateView
 from django.http import HttpResponse
 from datetime import datetime
 from django.template import Template, Context
 from django.views import View
 from django.shortcuts import render
 from mipagina.models import Personas
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from django.template.loader import get_template
+from .forms import*
+from django.urls import reverse_lazy
+from django.contrib.auth.models import User
 
 
 def index(request):
     return HttpResponse("Hola mundo")
-
 
 def hora(request):
     hora_actual = datetime.now()
@@ -20,6 +25,12 @@ def hora(request):
 
     return HttpResponse(documento_final)
 
+
+
+class GreetingView(View):
+    greeting = "OK"
+    def get(self, request):
+        return HttpResponse(self.greeting)
 
 class Persona(object):
     def __init__(self, nombre, apellido):
@@ -57,3 +68,17 @@ def resultado(request):
         
         mensaje = "No has introducido  nada"
     return HttpResponse(mensaje)
+
+class RegistroUsuario(CreateView):
+    form_class = RegistroForm
+    success_url = reverse_lazy("saludo")
+    template_name = "registro.html"
+
+class ListUsuarios(ListView):
+    model = User
+    template_name = "lista.html"
+
+class EliminarUsuario(DeleteView):
+    model = User
+    success_url = reverse_lazy("saludo")
+    template_name = "Eliminar.html"
