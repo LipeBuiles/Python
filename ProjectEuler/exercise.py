@@ -223,3 +223,60 @@ while i!=1000:
 print(max(resultado_final))
 
 #endregion
+
+#region exercise 9
+
+'''
+A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+
+a2 + b2 = c2
+For example, 32 + 42 = 9 + 16 = 25 = 52.
+
+There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+Find the product abc.
+'''
+
+num = 1000
+def divisores(n):
+  divisores=[1,n]
+  lim= int(n**0.5+1)
+  for i in range(2,lim):
+    if n%i==0: 
+      divisores+=[i,n//i]
+  divisores.sort()
+  return divisores
+divisores(1000)
+
+def hallarmn(suma):
+  dd=divisores(suma//2)
+  for n in dd:
+    m= suma/(2*n)-n
+    if  n>m  and m>0 :
+      return (int(n), int(m))
+  return (0,1)
+
+m = hallarmn(num)[0]
+n = hallarmn(num)[1]
+def ternaspitagoricas(n,m):
+  if n>m:
+    a = 2*n*m
+    b = n**2-m**2
+    c = n**2+m**2
+    return a*b*c
+print(ternaspitagoricas(m, n))
+
+#endregion
+
+#region exercise 10
+
+'''
+The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+Find the sum of all the primes below two million.
+'''
+
+import math as m
+prime = [x for x in range(2, 2000000) if all(x % y != 0 for y in range(2, int(m.sqrt(x)) + 1))]
+print(sum(prime))
+
+#endregion
