@@ -642,7 +642,7 @@ print(cadena[0:10])
 
 # endregion
 
-# region exercise 14
+#region exercise 14
 
 '''
 The following iterative sequence is defined for the set of positive integers:
@@ -686,5 +686,33 @@ for i in range(1, 1000000):
 
 print(starting_number)
 
+# endregion
+
+#region exercise 15
+
+'''
+Starting in the top left corner of a 2x2 grid, and only being able to move to the right and down, there are exactly routes to the bottom right corner.
+
+How many such routes are there through a 20x20 grid?
+'''
+
+from math import factorial
+n = 10
+m = n*2
+result = factorial(m) // (factorial(n) * factorial(m - n))
+print(result1)
+
+# endregion
+
+# region exercise 16
+
+'''
+ 2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8.
+ What is the sum of the digits of the number 2^1000?
+'''
+
+num = 2**1000
+x = [int(a) for a in str(num)]
+print(sum(x))
 
 # endregion
